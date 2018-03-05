@@ -1,0 +1,105 @@
+.wrap{
+  padding: 6.4rem 2rem 0;
+  .dec_div{
+    background: #F8F8F8;
+    padding: 1.8rem .8rem;
+    .text{
+      font-size: 1.4rem;
+      color: #666;
+      line-height: 1.4rem;
+      &:last-child{
+        text-align: right;
+      }
+    }
+    .red_div{
+      padding: .5rem 1.9rem;
+      p{
+        font-size: 2rem;
+        color: #FF6633;
+        line-height: 3rem;
+        white-space:nowrap;
+        font-weight: bold;
+      }
+    }
+  }
+  .title{
+    margin-top: 2rem;
+    font-size: 2rem;
+    color: #333333;
+    line-height: 3rem;
+  }
+  .main{
+    margin-top:2rem;
+    .borbot{
+      height: 4rem;
+      margin-top: 1.5rem;
+      border-bottom: 1px solid #E9E9E9;
+      display: flex;
+      justify-content:space-between;
+      input{
+        border: 0;
+        font-size: 1.6rem;
+        line-height: 1.6rem;
+      }
+      ::-webkit-input-placeholder{
+        color: #c5c5c5;
+      }
+      .yan_btn_hui{
+        background: none;
+        font-size: 1.6rem;
+        color: #E0E0E0;
+        &.on{
+          color: #FF6633;
+        }
+      }
+    }
+    .login_btn{
+      padding-top:4rem;
+      input{
+        display: block;
+        width:100%;
+        height: 4.4rem;
+        border:none;
+        font-size:1.6rem;
+        color:#fff;
+        background: #f63;
+        opacity: .5;
+        -webkit-appearance:none;
+        &.on{
+          opacity: 1;
+        }
+      }
+    }
+    .red{
+      font-size: 1.3rem;
+      color: #FF6633;
+      margin-top: .5rem;
+    }
+    .red2{
+      font-size: 1.4rem;
+      color: #FF6633;
+      margin-top: 1.5rem;
+    }
+    .error_code,.error_phone{
+      position: absolute;
+      opacity: 0.8;
+      text-align: center;
+      background: #000000;
+      border-radius: 2px;
+      font-size: 1.6rem;
+      color: #FFFFFF;
+      line-height: 4.6rem;
+      left: 0;
+      right: 0;
+      top: 35%;
+      white-space:nowrap; 
+      margin: 0 auto;
+    }
+    .error_code{
+      width: 10rem;
+    }
+    .error_phone{
+      width: 23rem;
+    }
+  }
+}

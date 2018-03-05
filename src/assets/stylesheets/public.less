@@ -1,0 +1,414 @@
+.clear{clear: both;height:0;width:0;overflow: hidden;display: block;margin:0;padding:0;}//清除浮动
+.text_ove2{display: -webkit-box;-webkit-box-orient: vertical; -webkit-line-clamp: 2;overflow: hidden;}//多行省略
+.text_ove1{overflow: hidden;text-overflow:ellipsis;white-space: nowrap;}//单行省略
+.border:after{content:'';position: absolute;bottom:0;width:100%;height:1px;background: #EAEAEA;;overflow: hidden;left:0;transform:translate(0%,0) scale(1,1);}//一像素border
+.border{position: relative;}.border1{position: relative;}
+.border1:before{content:'';position: absolute;top:0;width:100%;height:1px;background: #EAEAEA;;overflow: hidden;left:0;transform:translate(0%,0) scale(1,1);}//一像素border
+.gengduo{color:#999;font-size:1.2rem;font-weight:normal;i{padding-left:.3rem;color:#f63;font-size: 1.5rem;}}//更多图标
+.gengduo1{color:#f63;}
+.back{background-position: center center;background-repeat: no-repeat;background-size:cover;}//背景填满
+.tuwen{width:100%;display: flex;padding:1.5rem 1rem;box-sizing: border-box;}//图文混排
+.block{display: block;width:100%;height:100%;}//行转块
+.portrait_fen{display: flex;flex-direction: column;justify-content: space-between;}//纵向均分
+.portrait_fen_ya{display: flex;flex-direction: column;justify-content: space-between;box-sizing: border-box;}//纵向均分挤压
+.portrait_fen_center_ya{display: flex;flex-direction: column;justify-content: space-between;align-items: center;box-sizing: border-box;}//纵向均分挤压
+.portrait_center_ya{display: flex;flex-direction: column;justify-content: center;box-sizing: border-box;}//纵向居中挤压
+.transverse_fen_ya{display: flex;justify-content: space-between;box-sizing: border-box;}//横向均分挤压
+.transverse_center{display: flex;justify-content: center;}//横向居中
+.transverse_center_ya{display: flex;justify-content: center;box-sizing: border-box;}//横向居中挤压
+.transverse_fen{display: flex;justify-content: space-between;}//横向均分
+.transverse_fen_center_ya{display: flex;justify-content: space-between;align-items: center;box-sizing: border-box;}//横向均分挤压
+.transverse_fen_center{display: flex;justify-content: space-between;align-items: center;}//横向均分
+.transverse_center_center{display: flex;justify-content: center;align-items: center;width:100%;}//横向居中
+.transverse_mo_center_ya{display: flex;align-items: center;width:100%; box-sizing:border-box;}//横向 居中挤压
+
+
+.box_duo{display: flex;flex-wrap: wrap;}//盒子换行布局
+
+
+//理由 背景色及字体色
+.text_back1{background: #FFE3D9;color: #FF6633;}
+.text_back2{background: #FFE1E2;color: #FF5A5F;}
+.text_back3{background: #DEF1FF;color: #4CA8EB;}
+.text_back4{background: #E2FAF5;color: #50E3C2;}
+
+//背景遮罩
+.back_black{position: fixed;background: rgba(0,0,0,0.4);z-index: 100;top:0;bottom:0;width:100%;left: 0;right:0;height: 100%;transform-origin:100% 0%;}
+//菜单选择
+.option_main{
+  position: absolute;
+  top:4rem;
+  width:100%;
+  background: #fff;
+  z-index:101;
+  transform-origin:100% 0%;
+  left:0;
+  ul{
+    box-sizing: border-box;
+    padding-bottom:1rem;
+    li:after{
+      background:#f63;
+      transform:translate(0%,0%) scale(0.9,1);
+    }
+    li{
+      width:50%;
+      height:3.6rem;
+      font-size:1.4rem;
+      color: #666;
+      padding:0 1rem;
+      position: relative;
+      span{
+        width:12rem;
+      }
+      i{
+        display: none;
+        color:#f63;
+      }
+      &.on{
+        color:#f63;
+        a{
+          span{
+            color:#f63;
+          }
+        }
+        i{
+          display: block;
+        }
+      }
+    }
+  }
+  .btn{
+    height: 4.4rem;
+    display: flex;
+    border-top:1px solid #eee;
+    span{
+      flex:1;
+      font-size:1.6rem;
+      &:first-child{
+        background: #fff;
+        color:#333;
+      }
+      &:last-child{
+        background: #f63;
+        color:#fff;
+      }
+    }
+  }
+}
+.option_main1{
+  .box_duo{
+    overflow-y: auto;
+    max-height:30rem;
+  }
+  
+}
+
+.kenzo-enter-active{
+ animation:down .5s ease-in;
+}
+.kenzo-leave-active {
+  animation:up .5s ease-in;
+}
+//往下 -- 展开
+@keyframes down{
+   0%{transform:scale(1,0);opacity:0.2;}
+   100%{transform:scale(1,1);opacity: 1;}
+}
+//往上 --- 收起
+@keyframes up{
+ 0%{transform:scale(1,1);opacity: 1;}
+ 100%{transform:scale(1,0);opacity: 0.2;}
+}
+
+.kenzo1-enter-active{
+ animation:lef .5s ease-in;
+}
+.kenzo1-leave-active {
+  animation:rig .5s ease-in;
+}
+
+// //往左 -- 展开
+// @keyframes lef{
+//   0%{transform:translate(100%,0)}
+//   100%{transform:translate(0,0);}
+// }
+// //网右 -- 收起
+// @keyframes rig{
+//   0%{transform:translate(0,0);}
+//   100%{transform:translate(100%,0);}
+// }
+//往左 -- 展开
+@keyframes lef{
+  0%{transform:scale(0,1) translate(40%,0);opacity:0.2;}
+  100%{transform:scale(1,1) translate(0,0);opacity:1;}
+}
+//网右 -- 收起
+@keyframes rig{
+  0%{transform:scale(1,1) translate(0,0);opacity:1;}
+  100%{transform:scale(0,1) translate(40%,0);opacity:0.2;}
+}
+.kenzo2-enter-active{
+  animation:slideDown .5s ease-in;
+}
+.kenzo2-leave-active {
+  animation:slideUp .5s ease-in;
+}
+//下展
+@keyframes slideDown{
+  0%{transform:scale(1,1);opacity:0.2;}
+  100%{transform:scale(1,1);opacity:1;}
+}
+//收起
+@keyframes slideUp{
+  0%{transform:scale(1,1);opacity:1;}
+  100%{transform:scale(1,1);opacity:0.2;}
+}
+
+@keyframes jiao_top{
+ 0%{transform:rotate(0deg)}
+ 100%{transform:rotate(180deg)}
+}
+@keyframes jiao_bot{
+ 0%{transform:rotate(180deg)}
+ 100%{transform:rotate(0deg)}
+}
+
+
+//楼盘详情头部导航
+.public_detail{
+  background: #FFF;
+  margin-bottom: 1.2rem;
+  .header{
+    padding: 0 1rem;
+    line-height: 4rem;
+    .title{
+      font-size: 1.8rem;
+      color: #333333;
+    }
+    a{
+      display: flex;
+      font-size: 1.2rem;
+      color: #999999;
+      i{
+        margin-left: .3rem;
+      }
+    }
+    .daohang{
+      a{
+        display: inline;
+        padding-left: 1rem;
+        font-size: 1.2rem;
+        color: #F63;
+      }
+    }
+  }
+  .zejufuwu{
+    padding: 0 1rem 1.5rem;
+    .fuwu_dec{
+      height: 4.8rem;
+      display: flex;
+      align-items: center;
+      background: #FAF8F6;
+      box-shadow: 0 1px 3px 0 rgba(0,0,0,0.08);
+      padding: 0 1.5rem;
+      margin-top: 1.5rem;
+      .left{
+        display: flex;
+        align-items: center;
+        font-size: 1.6rem;
+        color: #444;
+        line-height: 1.6rem;
+        i{
+          background: #FFEDE7;
+          color: #F63;
+          font-size: 2.5rem;
+          margin-right: 1rem;
+        }
+      }
+      .right{
+        background: #FFEDE7;
+        border: 1px solid #FF6633;
+        border-radius: 46px;
+        width: 6.8rem;
+        height: 2.4rem;
+        font-size: 1rem;
+        color: #FF6633;
+        // line-height: 1rem;
+      }
+    }
+  }
+  .noData{
+    height: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    color: #666;
+  }
+}
+//楼盘详情头部吸顶
+.fixedHead{
+  background: #FFF;
+  position: fixed;
+  top: 4.4rem;
+  z-index: 3;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.10);
+  height:4rem;
+  overflow: hidden;
+  width: 100%;
+  #nav{
+    display:flex;
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    overflow-x:auto;
+    height:5.5rem;
+    a{
+      flex:1 0 auto;
+      height:4rem;
+      display:flex;
+      align-items:center;
+      color: #909090;
+      font-size: 1.4rem;
+      border-bottom: 3px solid #FFF;
+      padding: 0 1.6rem;
+    }
+    .check{
+      border-bottom: 3px solid #F63;
+      font-size: 1.4rem;
+      color: #FF6633;
+    }
+  }
+}
+
+//房贷计算器样式
+.boxfdjs{
+  background: #FFF;
+  padding: 8.4rem 1.5rem 6.4rem;
+  ul>li{
+    height: 4.5rem;
+    .shuilv{
+      input{
+        width: 5rem;
+        padding: .5rem .8rem;
+        font-size: 1.4rem;
+        border: 1px solid #EDEDED;
+        background: #F9F9F9;
+      }
+      span{
+        font-size: 1.4rem;
+        color: #b3b6be;
+      }
+    }
+    .title{
+      flex: 1;
+      font-size: 1.4rem;
+      display: flex;
+      align-items: center;
+      span{
+        color: #666;
+        margin-right: 1rem;
+        &:first-child{
+          width: 6rem;
+          text-align: right;
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+      .qing{
+        flex: 1;
+        color:  #B2B2B2;
+        &.on{
+          color: #666;
+        }
+      }
+      input{
+        flex: 1;
+        border: none;
+        // width: 10rem;
+      }
+      .red{
+        color: #F63;
+      }
+      .hkfs{
+        p{
+          .iconfont{
+            color: #FFF;
+            font-size: 1.6rem;
+            border-radius: 50%;
+            border: 1px solid #C6C6C6;
+          }
+        }
+        .pt{
+          margin-right: 2rem;
+        }
+        .cur{
+          .iconfont{
+            border: 1px solid #F63;
+            background: #F63;
+          }
+        }
+      }
+    }
+    i{
+      font-size: 1.4rem;
+      color: #C7C7CC;
+    }
+  }
+}
+.alert_box_fdjs{
+  background: #FFF;
+  padding: 0 1rem;
+  .box_duo{
+    li{
+      width:100%;
+      a{
+        width: 100%;
+        color:#666;
+        height: 100%;
+      }
+    }
+    .border:after{
+      background: #EAEAEA!important;
+    }
+  }
+}
+.fixed_btn_fdjs{
+  position: fixed;
+  bottom: 0;
+  height: 6.4rem;
+  background: #FFF;
+  width: 100%;
+  padding: 1rem;
+  p{
+    flex: 1;
+    border: 1px solid #E5E5E5;
+    border-radius: 2px;
+    font-size: 1.6rem;
+    color: #333;
+    height: 4.4rem;
+    &:frist-child{
+      margin-right: .7rem;
+    }
+    &:last-child{
+      color: #FFF;
+      margin-left: .7rem;
+      background: #FF6633;
+    }
+  }
+}
+.fixedAlert{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 45%;
+  margin: 0 auto;
+  width: 15rem;
+  min-height: 4rem;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, .7);
+  color: #FFF;
+  font-size: 1.4rem;
+  padding: .5rem 1rem;
+}
+//房贷计算器结束
